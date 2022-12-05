@@ -5,7 +5,7 @@ const {
   handleRows,
 } = require('./util');
 
-describe('isEmptyArray', () => {
+describe('#isEmptyArray', () => {
   describe('when the object is an array', () => {
     describe('when the array is empty', () => {
       it('returns true', () => {
@@ -27,7 +27,7 @@ describe('isEmptyArray', () => {
   });
 });
 
-describe('handleRows', () => {
+describe('#handleRows', () => {
   describe('when rows is truthy', () => {
     it('returns rows', () => {
       const rows = [1, 2, 'foo', 'bar'];
@@ -56,7 +56,7 @@ describe('handleRows', () => {
   });
 });
 
-describe('isAcceptableUrl', () => {
+describe('#isAcceptableUrl', () => {
   describe('when the URL is well-formed', () => {
     describe('when the URL begins with an acceptable protocol', () => {
       it('returns true', () => {

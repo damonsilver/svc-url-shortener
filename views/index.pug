@@ -8,8 +8,8 @@ block content
       input(type='text', name='url', value='')
     input(type='submit', value='Submit')
 
-  if error
-    p ERROR: #{error}
+  if message
+    p #{message}
   if original_url
     p Original URL: #{original_url}
   if short_url

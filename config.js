@@ -5,7 +5,8 @@ const config = {
     password: process.env.DB_PASSWORD || 'postgres',
     port: process.env.DB_PORT || '5432',
     user: process.env.DB_USER || 'postgres',
-  }
+  },
+  port: process.env.PORT || '8080',
 };
 
 module.exports = config;

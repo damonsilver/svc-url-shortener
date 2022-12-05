@@ -8,7 +8,8 @@ services:
     environment:
       NODE_ENV: dev
     ports:
-      - "8080:8080"
+      - "${PORT}:${PORT}"
+    restart: always
     volumes:
       # Map current project directory to working directory in container
       - ./:/src/app
@@ -20,11 +21,10 @@ services:
     image: postgres:14.1-alpine
     restart: always
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
     ports:
-      # Standard port for PostgreSQL
-      - "5432:5432"
+      - "${DB_PORT}:${DB_PORT}"
     volumes: 
       # Where data are stored
       - db:/var/lib/postgresql/data
