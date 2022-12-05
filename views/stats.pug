@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  center
+    table(style='width:100%', border='1')
+      thead
+        tr
+          th Original URL
+          th Short URL
+          th Times Loaded
+      tbody
+        each row in rows
+          tr 
+            td #{row.original_url}
+            td #{row.short_url}
+            td #{row.load_count}

@@ -1,0 +1,33 @@
+{
+  "name": "svc-url-shortener",
+  "version": "1.0.0",
+  "author": "",
+  "description": "Proof-of-concept URL shortener service",
+  "engines": {
+    "node": "18"
+  },
+  "private": true,
+  "scripts": {
+    "test": "jest --collectCoverage --silent --verbose",
+    "start": "node server.js",
+    "start:dev": "nodemon server.js"
+  },
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "http-status-codes": "^2.2.0",
+    "morgan": "~1.9.1",
+    "nanoid": "^3.1.22",
+    "pg": "^8.8.0",
+    "pug": "2.0.0-beta11"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1",
+    "nodemon": "^2.0.20"
+  }
+}

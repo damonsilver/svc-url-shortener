@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    depends_on:
+      # We must have a working database for the app to run.
+      - postgres
+    environment:
+      NODE_ENV: dev
+    ports:
+      - "8080:8080"
+    volumes:
+      # Map current project directory to working directory in container
+      - ./:/my/app
+      # https://stackoverflow.com/a/32785014
+      - /my/app/node_modules
+
+  # We refer to the name "postgres" in Node.
+  postgres:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      # Standard port for PostgreSQL
+      - "5432:5432"
+    volumes: 
+      # Where data are stored
+      - db:/var/lib/postgresql/data
+      # Initialization script to create table.
+      # https://hub.docker.com/_/postgres/
+      - ./db-init.sql:/docker-entrypoint-initdb.d/db-init.sql
+volumes:
+  db:
+    driver: local

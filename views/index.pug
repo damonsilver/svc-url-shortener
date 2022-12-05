@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  form(action='/', method='POST')
+    p
+      | URL: 
+      input(type='text', name='url', value='')
+    input(type='submit', value='Submit')
+
+  if error
+    p ERROR: #{error}
+  if original_url
+    p Original URL: #{original_url}
+  if short_url
+    p Short URL: #{short_url}
