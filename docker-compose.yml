@@ -11,9 +11,9 @@ services:
       - "8080:8080"
     volumes:
       # Map current project directory to working directory in container
-      - ./:/my/app
+      - ./:/src/app
       # https://stackoverflow.com/a/32785014
-      - /my/app/node_modules
+      - /src/app/node_modules
 
   # We refer to the name "postgres" in Node.
   postgres:
