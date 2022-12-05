@@ -77,6 +77,11 @@ If you really need to kill Docker with fire, there's always this, but be extra c
 
 This tells Docker to prune all images, containers, to force without prompting, and to delete any associated volumes.
 
+## Navigation
+
+- http://127.0.0.1:8080/ - landing page, main form
+- http://127.0.0.1:8080/stats - stats page
+
 # Test
 
 Since I wanted to keep this simple for a proof-of-concept, you can run tests outside of Docker:
